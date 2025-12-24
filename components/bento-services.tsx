@@ -1,59 +1,8 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Video, Camera, Lightbulb, Music, Mic, Film } from "lucide-react"
 import Link from "next/link"
-
-const services = [
-  {
-    icon: Video,
-    title: "Commercial Video",
-    description: "High-quality video production for brands, products, and corporate storytelling.",
-    metrics: "50+ films",
-    color: "text-primary",
-    image: "/OneDrive_1_17-12-2025/john with cameras at zebra.jpg"
-  },
-  {
-    icon: Music,
-    title: "Music Videos",
-    description: "Cinematic music videos that bring your sound to life with stunning visuals.",
-    metrics: "30+ videos",
-    color: "text-secondary",
-    video: "https://www.youtube.com/embed/hktW_HhhJfo?si=8qgWFqab6T5eL77W"
-  },
-  {
-    icon: Camera,
-    title: "Event Coverage",
-    description: "Capture the energy and emotion of your corporate events, conferences, and gatherings.",
-    metrics: "200+ events",
-    color: "text-primary",
-    image: "/L1000582-2.jpg"
-  },
-  {
-    icon: Film,
-    title: "Wedding Films",
-    description: "Beautiful wedding videography that tells your love story.",
-    metrics: "100+ weddings",
-    color: "text-secondary",
-    image: "/weddings.png"
-  },
-  {
-    icon: Lightbulb,
-    title: "Lighting & Set Design",
-    description: "Professional lighting and atmosphere creation to enhance every production.",
-    metrics: "Expert crew",
-    color: "text-primary",
-    image: "/OneDrive_1_17-12-2025/Camera Setup.jpg"
-  },
-  {
-    icon: Mic,
-    title: "Sound Design",
-    description: "Professional audio recording, mixing, and sound design for all projects.",
-    metrics: "Studio quality",
-    color: "text-secondary",
-    image: "/sound.jpg"
-  },
-]
+import { servicesData } from "@/lib/services-data"
 
 export function BentoServices() {
   return (
@@ -70,10 +19,10 @@ export function BentoServices() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
+          {servicesData.map((service) => {
             const Icon = service.icon
             return (
-              <Link href="/services" key={index}>
+              <Link href={`/${service.slug}`} key={service.slug}>
                 <Card className="group relative h-full p-8 glass-effect border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-300" />

@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: "dark" }} className="dark">
       <body className={`${montserrat.variable} ${inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"

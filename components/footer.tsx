@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 
 export function Footer() {
   return (
@@ -19,37 +19,20 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Services</h3>
+            <h3 className="font-semibold text-foreground">Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Digital Marketing
+                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                  About
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Creative Design
+                  Services
                 </Link>
               </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Video Production
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Web Development
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Company</h3>
-            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">
                   Portfolio
@@ -61,54 +44,49 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                  Careers
+                <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Social */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Get in Touch</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Chicago, IL</li>
-              <li>info@chicagoamp.com</li>
-              <li>
-                <button 
-                  className="text-primary hover:underline"
-                  onClick={() => {
-                    // In a real implementation, this would connect to a live chat service
-                    alert('Live chat would open here');
-                  }}
-                >
-                  Start Live Chat
-                </button>
-              </li>
-            </ul>
+            <h3 className="font-semibold text-foreground">Social</h3>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://www.instagram.com/chicagoamp/"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
+              </a>
+              <a
+                href="https://www.facebook.com/chicagoamp"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Facebook size={20} />
+                <span className="sr-only">Facebook</span>
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Youtube size={20} />
                 <span className="sr-only">YouTube</span>
               </a>
             </div>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-foreground">Contact Info</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>Chicago, IL</li>
+              <li>info@chicagoamp.com</li>
+            </ul>
           </div>
         </div>
 

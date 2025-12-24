@@ -7,7 +7,25 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Badge } from "@/components/ui/badge"
 import { Play, ExternalLink, TrendingUp } from "lucide-react"
 
-const portfolioItems = [
+type PortfolioResult = {
+  label: string
+  value: string
+}
+
+type PortfolioItem = {
+  id: number
+  title: string
+  category: string
+  description: string
+  image?: string
+  results: PortfolioResult[]
+  tags: string[]
+  link?: string
+  embedUrl?: string
+  embedType?: "video" | "post"
+}
+
+const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "Saybrook - Our World is Worth Fighting For",
@@ -46,27 +64,35 @@ const portfolioItems = [
   },
   {
     id: 4,
-    title: "ABTA 2023",
+    title: "ABTA Reel - 209K Views",
     category: "corporate",
-    description: "Documentary showcasing compassionate individuals helping others through challenging experiences.",
+    description: "Reel by American Brain Tumor Association.",
     image: "/portfolio-festival-event.jpg",
     results: [
-      { label: "Impact", value: "High" },
-      { label: "Community", value: "Strong" },
+      { label: "Views", value: "209K" },
+      { label: "Platform", value: "Facebook" },
     ],
-    tags: ["Documentary", "Corporate"],
+    tags: ["Facebook Reel", "Nonprofit", "Community"],
+    link: "https://www.facebook.com/share/r/1D7YZsADG2/",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1D7YZsADG2%2F&show_text=0&width=720",
+    embedType: "video",
   },
   {
     id: 5,
-    title: "DiAmorte - Ashes and Sorrow",
-    category: "music",
-    description: "Dramatic music video with cinematic production values.",
+    title: "ABTA Reel - 17K Views",
+    category: "corporate",
+    description: "Reel by American Brain Tumor Association.",
     image: "/portfolio-fitness-app.jpg",
     results: [
-      { label: "Views", value: "75K+" },
-      { label: "Fan Response", value: "Excellent" },
+      { label: "Views", value: "17K" },
+      { label: "Platform", value: "Facebook" },
     ],
-    tags: ["Music Video", "Drama"],
+    tags: ["Facebook Reel", "Nonprofit", "Storytelling"],
+    link: "https://www.facebook.com/share/v/16UC1MsdKF/",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F16UC1MsdKF%2F&show_text=0&width=720",
+    embedType: "video",
   },
   {
     id: 6,
@@ -94,27 +120,52 @@ const portfolioItems = [
   },
   {
     id: 8,
-    title: "HP IMTS Chicago 2022",
+    title: "ABTA Reel - 911 Views",
     category: "corporate",
-    description: "Trade show coverage for HP showcasing innovative technology.",
+    description: "Reel by American Brain Tumor Association.",
     image: "/portfolio-tech-conference.jpg",
     results: [
-      { label: "Booth Traffic", value: "+300%" },
-      { label: "Leads Generated", value: "1K+" },
+      { label: "Views", value: "911" },
+      { label: "Platform", value: "Facebook" },
     ],
-    tags: ["Corporate", "Trade Show"],
+    tags: ["Facebook Reel", "Nonprofit", "Awareness"],
+    link: "https://www.facebook.com/share/v/1TVhEdT7hw/",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1TVhEdT7hw%2F&show_text=0&width=720",
+    embedType: "video",
   },
   {
     id: 9,
-    title: "Cam O Flage - Drug City",
-    category: "music",
-    description: "International music video filmed in South Africa.",
+    title: "Andrew Massih - ABTA Live Stream",
+    category: "corporate",
+    description:
+      "ABTA talk about medical cannabis and the effects on brain tumors. The science broken down is interesting, we are live streaming it now. Give them a like.",
     image: "/portfolio-ecommerce-seo.jpg",
     results: [
-      { label: "Views", value: "120K+" },
-      { label: "International Reach", value: "Global" },
+      { label: "Format", value: "Live stream" },
+      { label: "Platform", value: "Facebook" },
     ],
-    tags: ["Music Video", "International"],
+    tags: ["Facebook Post", "Live Stream", "Education"],
+    link: "https://www.facebook.com/share/p/19esS5hJ1t/",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F19esS5hJ1t%2F&show_text=true&width=720",
+    embedType: "post",
+  },
+  {
+    id: 10,
+    title: "Facebook Reel - 1DYvFWFAfA",
+    category: "corporate",
+    description: "Facebook reel shared on social.",
+    image: "/placeholder.svg",
+    results: [
+      { label: "Platform", value: "Facebook" },
+      { label: "Format", value: "Reel" },
+    ],
+    tags: ["Facebook Reel", "Social"],
+    link: "https://www.facebook.com/share/v/1DYvFWFAfA/",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1DYvFWFAfA%2F&show_text=0&width=720",
+    embedType: "video",
   },
 ]
 
@@ -128,7 +179,7 @@ const categories = [
 
 export function PortfolioGrid() {
   const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedItem, setSelectedItem] = useState<(typeof portfolioItems)[0] | null>(null)
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
 
   const filteredItems =
     selectedCategory === "all" ? portfolioItems : portfolioItems.filter((item) => item.category === selectedCategory)
@@ -215,19 +266,36 @@ export function PortfolioGrid() {
 
                 <div className="space-y-6">
                   {/* Image/Video */}
-                  <div className="relative aspect-video rounded-xl overflow-hidden">
-                    <img
-                      src={selectedItem.image || "/placeholder.svg"}
-                      alt={selectedItem.title}
-                      className="w-full h-full object-cover"
-                    />
-                    {(selectedItem.category === "film" || selectedItem.category === "events") && (
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                        <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                          <Play className="mr-2 h-5 w-5" />
-                          Play Video
-                        </Button>
-                      </div>
+                  <div
+                    className={`relative rounded-xl overflow-hidden ${
+                      selectedItem.embedType === "post" ? "min-h-[420px] md:min-h-[520px]" : "aspect-video"
+                    }`}
+                  >
+                    {selectedItem.embedUrl ? (
+                      <iframe
+                        src={selectedItem.embedUrl}
+                        title={`${selectedItem.title} embed`}
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+                        allowFullScreen
+                        loading="lazy"
+                        className="w-full h-full"
+                      />
+                    ) : (
+                      <>
+                        <img
+                          src={selectedItem.image || "/placeholder.svg"}
+                          alt={selectedItem.title}
+                          className="w-full h-full object-cover"
+                        />
+                        {(selectedItem.category === "film" || selectedItem.category === "events") && (
+                          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                              <Play className="mr-2 h-5 w-5" />
+                              Play Video
+                            </Button>
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
 
@@ -264,9 +332,18 @@ export function PortfolioGrid() {
 
                   {/* CTA */}
                   <div className="pt-4 border-t border-border">
-                    <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Start Your Project
-                    </Button>
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                      {selectedItem.link && (
+                        <Button asChild variant="outline" size="lg" className="w-full bg-transparent sm:w-auto">
+                          <a href={selectedItem.link} target="_blank" rel="noreferrer">
+                            View on Facebook
+                          </a>
+                        </Button>
+                      )}
+                      <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 sm:w-auto">
+                        Start Your Project
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </>
