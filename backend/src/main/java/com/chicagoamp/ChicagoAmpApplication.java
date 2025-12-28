@@ -1,0 +1,11 @@
+package com.chicagoamp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ChicagoAmpApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(ChicagoAmpApplication.class, args);
+  }
+}

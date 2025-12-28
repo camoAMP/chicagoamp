@@ -96,6 +96,9 @@ export function Navigation() {
             <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
+            <Link href="/admin" className="text-foreground hover:text-primary transition-colors">
+              Platform
+            </Link>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
           </div>
 
@@ -134,6 +137,9 @@ export function Navigation() {
             </Link>
             <Link href="/contact" className="block text-foreground hover:text-primary transition-colors">
               Contact
+            </Link>
+            <Link href="/admin" className="block text-foreground hover:text-primary transition-colors">
+              Platform
             </Link>
             <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
           </div>

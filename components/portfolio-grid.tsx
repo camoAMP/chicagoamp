@@ -17,7 +17,7 @@ type PortfolioItem = {
   title: string
   category: string
   description: string
-  image?: string
+  image: string
   results: PortfolioResult[]
   tags: string[]
   link?: string
@@ -31,7 +31,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Saybrook - Our World is Worth Fighting For",
     category: "commercial",
     description: "Environmental advocacy video showcasing the importance of preservation.",
-    image: "/portfolio-tech-branding.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691453590-XVXKXM2JHJTOWNRWH366/L1050098.jpg",
     results: [
       { label: "Views", value: "100K+" },
       { label: "Engagement", value: "+250%" },
@@ -43,7 +44,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "HP AMUG 2024",
     category: "corporate",
     description: "Working with HP 3D team to tell the story of what 3D is and who it helps.",
-    image: "/portfolio-marketing-campaign.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691453590-ZMZZH62AZDDM8DHY82UC/L1050100.jpg",
     results: [
       { label: "Attendees", value: "5K+" },
       { label: "Social Reach", value: "500K+" },
@@ -55,7 +57,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Whüzy - Hotel Song",
     category: "music",
     description: "Music video featuring cinematic storytelling and visual artistry.",
-    image: "/portfolio-food-film.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691455044-RR2ANBRTNT4EQ2FEO2VM/L1050103.jpg",
     results: [
       { label: "Views", value: "50K+" },
       { label: "Engagement", value: "+180%" },
@@ -67,7 +70,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "ABTA Reel - 209K Views",
     category: "corporate",
     description: "Reel by American Brain Tumor Association.",
-    image: "/portfolio-festival-event.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691455315-KNZWF91PETTMNUWD3ZAF/L1050101.jpg",
     results: [
       { label: "Views", value: "209K" },
       { label: "Platform", value: "Facebook" },
@@ -83,7 +87,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "ABTA Reel - 17K Views",
     category: "corporate",
     description: "Reel by American Brain Tumor Association.",
-    image: "/portfolio-fitness-app.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691456489-NWL86EZ6WLIO9O8DAB6W/L1050107.jpg",
     results: [
       { label: "Views", value: "17K" },
       { label: "Platform", value: "Facebook" },
@@ -99,7 +104,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "The Unusual - Stan",
     category: "music",
     description: "Music video shot in Elgin with creative visuals and storytelling.",
-    image: "/portfolio-fashion-doc.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691457946-OQFGL275VFU8UNSN61EO/L1050124.jpg",
     results: [
       { label: "Views", value: "40K+" },
       { label: "Social Shares", value: "5K+" },
@@ -111,7 +117,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Wedding Recaps",
     category: "wedding",
     description: "Beautiful wedding videography capturing love stories and special moments.",
-    image: "/portfolio-fintech-design.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691458622-AKOSYSL4VQ5TT1M4TAWK/L1050125.jpg",
     results: [
       { label: "Happy Couples", value: "100+" },
       { label: "Referrals", value: "95%" },
@@ -123,7 +130,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "ABTA Reel - 911 Views",
     category: "corporate",
     description: "Reel by American Brain Tumor Association.",
-    image: "/portfolio-tech-conference.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691459070-7O7L58ZNE8CMI0ZQP21C/L1050161.jpg",
     results: [
       { label: "Views", value: "911" },
       { label: "Platform", value: "Facebook" },
@@ -140,7 +148,8 @@ const portfolioItems: PortfolioItem[] = [
     category: "corporate",
     description:
       "ABTA talk about medical cannabis and the effects on brain tumors. The science broken down is interesting, we are live streaming it now. Give them a like.",
-    image: "/portfolio-ecommerce-seo.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691460611-J3NIAJZ0LWPIX06AYZYK/L1050172.jpg",
     results: [
       { label: "Format", value: "Live stream" },
       { label: "Platform", value: "Facebook" },
@@ -156,7 +165,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Facebook Reel - 1DYvFWFAfA",
     category: "corporate",
     description: "Facebook reel shared on social.",
-    image: "/placeholder.svg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5942c96e414fb5b5f3722b3f/1625691460799-S07306A5ULHQ5EROM4PU/L1050174.jpg",
     results: [
       { label: "Platform", value: "Facebook" },
       { label: "Format", value: "Reel" },
@@ -216,7 +226,7 @@ export function PortfolioGrid() {
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={item.image || "/placeholder.svg"}
+                  src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
@@ -283,7 +293,7 @@ export function PortfolioGrid() {
                     ) : (
                       <>
                         <img
-                          src={selectedItem.image || "/placeholder.svg"}
+                          src={selectedItem.image}
                           alt={selectedItem.title}
                           className="w-full h-full object-cover"
                         />
