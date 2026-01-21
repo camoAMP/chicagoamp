@@ -39,11 +39,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/admin" className="text-muted-foreground hover:text-primary transition-colors">
-                  Platform
-                </Link>
-              </li>
-              <li>
                 <Link href="/marketing" className="text-muted-foreground hover:text-primary transition-colors">
                   Marketing Suite
                 </Link>
