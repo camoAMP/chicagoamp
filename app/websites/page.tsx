@@ -6,6 +6,21 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { servicesData } from "@/lib/services-data"
 
+const externalSites = [
+  {
+    name: "Beloveful",
+    url: "https://beloveful.com",
+    description: "Brand-forward storytelling and community-first design with a calm, editorial layout.",
+    tags: ["Brand", "Lifestyle", "Content"],
+  },
+  {
+    name: "Our Community in Unity",
+    url: "https://ourcommunityinunity.org",
+    description: "Community-centered nonprofit site focused on impact, programs, and local outreach.",
+    tags: ["Nonprofit", "Community", "Program"],
+  },
+]
+
 export default function WebsitesShowcasePage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -21,6 +36,63 @@ export default function WebsitesShowcasePage() {
             Explore every standalone page in the Chicago AMP ecosystem—from commercial campaigns to music videos and production
             departments. Each link opens one of our immersive website builds.
           </p>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/40">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Client Websites</p>
+            <h2 className="text-3xl sm:text-4xl font-bold">Mini site previews</h2>
+            <p className="text-lg text-muted-foreground">
+              Live previews of the client websites we&apos;ve shipped. Tap any site to open the full experience.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {externalSites.map((site) => (
+              <Card key={site.url} className="glass-effect border-border overflow-hidden">
+                <div className="relative bg-black/30">
+                  <div className="pt-[62%]" />
+                  <div className="absolute inset-0">
+                    <iframe
+                      src={site.url}
+                      title={`${site.name} preview`}
+                      loading="lazy"
+                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      className="h-[200%] w-[200%] origin-top-left scale-[0.5] pointer-events-none"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div className="space-y-1">
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Live website</p>
+                      <h3 className="text-xl font-semibold">{site.name}</h3>
+                    </div>
+                    <Button asChild size="sm">
+                      <a href={site.url} target="_blank" rel="noreferrer">
+                        Open site
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <p className="text-sm text-muted-foreground">{site.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {site.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="bg-muted text-muted-foreground">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Some websites may block embedded previews. If you see a blank frame, click “Open site.”
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
