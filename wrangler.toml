@@ -6,6 +6,3 @@ pages_build_output_dir = ".next/export"
 [vars]
 # Disable Next.js telemetry during Cloudflare builds
 NEXT_TELEMETRY_DISABLED = "1"
-
-[assets]
-directory = ".next/export"
