@@ -10,6 +10,21 @@ const stats = [
   { label: "Top Device", value: "Mobile", detail: "62%" },
 ]
 
+const playerVideoIds = [
+  "278586227",
+  "336722959",
+  "245099976",
+  "312206479",
+  "278586144",
+  "578635526",
+]
+
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return playerVideoIds.map((id) => ({ id }))
+}
+
 export default function PlayerPage({ params }: { params: { id: string } }) {
   const videoId = params.id
 

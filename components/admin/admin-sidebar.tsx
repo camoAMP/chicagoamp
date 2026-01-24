@@ -13,6 +13,7 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { withBasePath } from "@/lib/with-base-path"
 
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
@@ -30,7 +31,7 @@ export function AdminSidebar() {
   return (
     <aside className="hidden lg:flex lg:flex-col w-72 border-r border-border bg-sidebar text-sidebar-foreground">
       <div className="flex items-center gap-3 px-6 py-6">
-        <img src="/chicago-amp-logo.png" alt="Chicago AMP" className="h-12 w-12 object-contain" />
+        <img src={withBasePath("/chicago-amp-logo.png")} alt="Chicago AMP" className="h-12 w-12 object-contain" />
         <div>
           <div className="text-lg font-semibold">Chicago AMP</div>
           <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Command</div>

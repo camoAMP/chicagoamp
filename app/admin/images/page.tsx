@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { imageAssets } from "@/lib/amp-data"
 import { ImageActions } from "@/components/admin/image-actions"
+import { withBasePath } from "@/lib/with-base-path"
 
 const statusStyles: Record<string, string> = {
   Ready: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
@@ -56,7 +57,7 @@ export default function AdminImagesPage() {
           <MotionReveal key={image.id} delay={index * 0.04}>
             <Card className="glass-effect border-border overflow-hidden">
               <div className="relative h-40 overflow-hidden">
-                <img src={image.url} alt={image.title} className="h-full w-full object-cover" />
+                <img src={withBasePath(image.url)} alt={image.title} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute left-3 top-3">
                   <Badge className={statusStyles[image.status] ?? "bg-muted"}>{image.status}</Badge>

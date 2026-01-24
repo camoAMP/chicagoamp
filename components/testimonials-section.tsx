@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Star } from "lucide-react"
+import { withBasePath } from "@/lib/with-base-path"
 
 const testimonials = [
   {
@@ -63,7 +64,7 @@ export function TestimonialsSection() {
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-4 border-t border-border">
                   <img
-                    src={testimonial.image || "/placeholder.svg"}
+                    src={withBasePath(testimonial.image || "/placeholder.svg")}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover"
                   />

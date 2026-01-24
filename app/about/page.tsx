@@ -5,6 +5,7 @@ import { CTASection } from "@/components/cta-section"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { withBasePath } from "@/lib/with-base-path"
 
 const aboutStats = [
   { label: "Founded", value: "2014" },
@@ -109,7 +110,7 @@ export default function AboutPage() {
             </div>
             <div className="glass-effect rounded-3xl overflow-hidden border border-border shadow-2xl">
               <img
-                src="/L1000639.jpg"
+                src={withBasePath("/L1000639.jpg")}
                 alt="Chicago AMP crew on set"
                 className="w-full h-full object-cover"
               />

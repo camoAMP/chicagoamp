@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { withBasePath } from "@/lib/with-base-path"
 
 const valueProps = [
   {
@@ -25,16 +26,22 @@ const portfolioHighlights = [
     title: "Cinematic Brand Films",
     category: "Video Production",
     result: "50+ films delivered",
+    image: "/portfolio-food-film.jpg",
+    imageAlt: "On-set close-up of a chef plating food for a cinematic brand film.",
   },
   {
     title: "Editorial Photo Stories",
     category: "Photography",
     result: "Product, lifestyle, and events",
+    image: "/portfolio-fashion-doc.jpg",
+    imageAlt: "Editorial fashion photo featuring a model in dramatic lighting.",
   },
   {
     title: "Conversion-Ready Websites",
     category: "Web Design",
     result: "Modern builds that perform",
+    image: "/portfolio-ecommerce-seo.jpg",
+    imageAlt: "Laptop and mobile screens showing a modern ecommerce website.",
   },
 ]
 
@@ -122,6 +129,10 @@ export default function MarketinPage() {
               <div className="grid gap-6 md:grid-cols-3">
                 {portfolioHighlights.map((item) => (
                   <Card key={item.title} className="glass-effect border-border p-6 space-y-3">
+                    <div className="relative h-32 sm:h-36 overflow-hidden rounded-lg">
+                      <img src={withBasePath(item.image)} alt={item.imageAlt} className="h-full w-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                    </div>
                     <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{item.category}</p>
                     <h4 className="text-lg font-semibold">{item.title}</h4>
                     <p className="text-sm text-primary font-semibold">{item.result}</p>

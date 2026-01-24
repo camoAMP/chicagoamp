@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
+import { withBasePath } from "@/lib/with-base-path"
 
 export function HeroSection() {
   return (
@@ -70,7 +71,7 @@ export function HeroSection() {
             <div className="absolute inset-0 glass-effect rounded-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
               <img
-                src="/abstract-digital-creative-agency-work-cyberpunk-ne.jpg"
+                src={withBasePath("/abstract-digital-creative-agency-work-cyberpunk-ne.jpg")}
                 alt="Chicago AMP creative work"
                 className="w-full h-full object-cover mix-blend-luminosity opacity-60"
               />

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRef, useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { withBasePath } from "@/lib/with-base-path"
 
 const servicesLinks = [
   { href: "/websites", label: "All Our Website Builds" },
@@ -44,7 +45,7 @@ export function Navigation() {
           <Link href="/">
             <div className="flex items-center">
               <img 
-                src="/chicago-amp-logo.png" 
+                src={withBasePath("/chicago-amp-logo.png")} 
                 alt="Chicago AMP Logo" 
                 className="h-20 w-20 object-contain"
               />

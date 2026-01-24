@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Play, ExternalLink, TrendingUp } from "lucide-react"
+import { withBasePath } from "@/lib/with-base-path"
 
 type PortfolioResult = {
   label: string
@@ -226,7 +227,7 @@ export function PortfolioGrid() {
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={item.image}
+                  src={withBasePath(item.image)}
                   alt={item.title}
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
@@ -293,7 +294,7 @@ export function PortfolioGrid() {
                     ) : (
                       <>
                         <img
-                          src={selectedItem.image}
+                          src={withBasePath(selectedItem.image)}
                           alt={selectedItem.title}
                           className="w-full h-full object-cover"
                         />

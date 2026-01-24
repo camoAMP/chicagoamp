@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ServiceDetail } from "@/lib/services-data"
+import { withBasePath } from "@/lib/with-base-path"
 
 interface ServiceDetailContentProps {
   service: ServiceDetail
@@ -72,7 +73,11 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
                   />
                 </div>
               ) : (
-                <img src={service.image || "/placeholder.svg"} alt={service.title} className="w-full h-full object-cover" />
+                <img
+                  src={withBasePath(service.image || "/placeholder.svg")}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
               )}
             </div>
           </div>

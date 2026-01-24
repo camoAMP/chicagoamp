@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
 import { servicesData } from "@/lib/services-data"
+import { withBasePath } from "@/lib/with-base-path"
 
 export function BentoServices() {
   return (
@@ -44,7 +45,7 @@ export function BentoServices() {
                     ) : service.image ? (
                       <div className="w-full h-32 rounded-lg overflow-hidden">
                         <img 
-                          src={service.image} 
+                          src={withBasePath(service.image)} 
                           alt={service.title}
                           className="w-full h-full object-cover object-center"
                         />
