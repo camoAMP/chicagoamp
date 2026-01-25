@@ -127,6 +127,69 @@ export default function WorldMakingPage() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
+            <div className="space-y-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">World map</p>
+              <h2 className="text-3xl sm:text-4xl font-bold">Global reach, local focus</h2>
+              <p className="text-muted-foreground text-lg">
+                We build worlds wherever the story demands it. From local stages to global releases, our teams produce
+                with the same creative intensity and problem-solving mindset.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="rounded-full border border-border px-4 py-1 text-sm text-muted-foreground">
+                  Chicago HQ
+                </span>
+                <span className="rounded-full border border-border px-4 py-1 text-sm text-muted-foreground">
+                  Remote-ready
+                </span>
+                <span className="rounded-full border border-border px-4 py-1 text-sm text-muted-foreground">
+                  Travel crews
+                </span>
+              </div>
+            </div>
+            <Card className="glass-effect border-border p-5">
+              <div className="relative aspect-[5/3] w-full overflow-hidden rounded-2xl bg-muted/30 amp-grid">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+                <svg
+                  viewBox="0 0 1000 520"
+                  role="img"
+                  aria-label="World map"
+                  className="absolute inset-0 h-full w-full text-primary/25"
+                >
+                  <rect x="6" y="6" width="988" height="508" rx="36" fill="none" stroke="currentColor" />
+                  <g fill="currentColor">
+                    <path d="M80 140 L220 95 L330 120 L360 190 L300 245 L210 235 L140 200 L90 170 Z" />
+                    <path d="M260 260 L330 300 L310 370 L250 440 L220 380 L235 305 Z" />
+                    <path d="M300 60 L360 50 L400 80 L330 95 Z" />
+                    <path d="M440 140 L520 120 L570 150 L545 190 L470 175 L430 155 Z" />
+                    <path d="M470 200 L560 210 L585 285 L535 350 L470 330 L440 255 Z" />
+                    <path d="M575 150 L710 120 L840 160 L875 220 L820 260 L705 240 L600 205 Z" />
+                    <path d="M760 320 L850 345 L870 405 L800 435 L740 385 Z" />
+                    <path d="M210 470 L790 470 L760 505 L240 505 Z" />
+                  </g>
+                  <g className="text-primary/70" fill="currentColor">
+                    <circle cx="210" cy="185" r="8" />
+                    <circle cx="305" cy="210" r="6" />
+                    <circle cx="510" cy="170" r="7" />
+                    <circle cx="610" cy="200" r="6" />
+                    <circle cx="740" cy="210" r="6" />
+                    <circle cx="820" cy="260" r="6" />
+                    <circle cx="795" cy="365" r="7" />
+                  </g>
+                  <g className="text-primary/50" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M210 185 C 330 150 450 160 610 200" />
+                    <path d="M510 170 C 580 145 690 140 820 260" />
+                    <path d="M305 210 C 400 260 520 300 795 365" />
+                  </g>
+                </svg>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="glass-effect border-border p-10 text-center space-y-6">
             <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Dreams to reality</p>
             <h3 className="text-3xl sm:text-4xl font-bold">We're here to make your dreams happen, baby!!</h3>
