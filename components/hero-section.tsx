@@ -70,11 +70,18 @@ export function HeroSection() {
           <div className="relative h-[600px] hidden lg:block">
             <div className="absolute inset-0 glass-effect rounded-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-              <img
-                src={withBasePath("/abstract-digital-creative-agency-work-cyberpunk-ne.jpg")}
-                alt="Chicago AMP creative work"
-                className="w-full h-full object-cover mix-blend-luminosity opacity-60"
-              />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-70"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
+                <source src={withBasePath("/chigacoherovid.mp4")} type="video/mp4" />
+              </video>
               <div className="absolute top-20 right-20 glass-effect p-6 rounded-xl animate-float">
                 <div className="text-2xl font-bold text-primary glow-cyan">Film Production</div>
               </div>
