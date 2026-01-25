@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { withBasePath } from "@/lib/with-base-path"
+import { WorldMapFrame } from "@/components/world-map-frame"
 
 const focusPoints = [
   {
@@ -92,11 +93,15 @@ export default function WorldMakingPage() {
               </div>
             </div>
             <div className="glass-effect rounded-3xl overflow-hidden border border-border shadow-2xl">
-              <img
-                src={withBasePath("/abstract-digital-creative-agency-work-cyberpunk-ne.jpg")}
-                alt="Abstract creative world building"
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
-              />
+              >
+                <source src={withBasePath("/ChicagoAmp-LogoBuild.mp4")} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -148,40 +153,9 @@ export default function WorldMakingPage() {
               </div>
             </div>
             <Card className="glass-effect border-border p-5">
-              <div className="relative aspect-[5/3] w-full overflow-hidden rounded-2xl bg-muted/30 amp-grid">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
-                <svg
-                  viewBox="0 0 1000 520"
-                  role="img"
-                  aria-label="World map"
-                  className="absolute inset-0 h-full w-full text-primary/25"
-                >
-                  <rect x="6" y="6" width="988" height="508" rx="36" fill="none" stroke="currentColor" />
-                  <g fill="currentColor">
-                    <path d="M80 140 L220 95 L330 120 L360 190 L300 245 L210 235 L140 200 L90 170 Z" />
-                    <path d="M260 260 L330 300 L310 370 L250 440 L220 380 L235 305 Z" />
-                    <path d="M300 60 L360 50 L400 80 L330 95 Z" />
-                    <path d="M440 140 L520 120 L570 150 L545 190 L470 175 L430 155 Z" />
-                    <path d="M470 200 L560 210 L585 285 L535 350 L470 330 L440 255 Z" />
-                    <path d="M575 150 L710 120 L840 160 L875 220 L820 260 L705 240 L600 205 Z" />
-                    <path d="M760 320 L850 345 L870 405 L800 435 L740 385 Z" />
-                    <path d="M210 470 L790 470 L760 505 L240 505 Z" />
-                  </g>
-                  <g className="text-primary/70" fill="currentColor">
-                    <circle cx="210" cy="185" r="8" />
-                    <circle cx="305" cy="210" r="6" />
-                    <circle cx="510" cy="170" r="7" />
-                    <circle cx="610" cy="200" r="6" />
-                    <circle cx="740" cy="210" r="6" />
-                    <circle cx="820" cy="260" r="6" />
-                    <circle cx="795" cy="365" r="7" />
-                  </g>
-                  <g className="text-primary/50" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M210 185 C 330 150 450 160 610 200" />
-                    <path d="M510 170 C 580 145 690 140 820 260" />
-                    <path d="M305 210 C 400 260 520 300 795 365" />
-                  </g>
-                </svg>
+              <div className="relative aspect-[5/3] w-full overflow-hidden rounded-2xl">
+                <WorldMapFrame className="h-full w-full" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
               </div>
             </Card>
           </div>

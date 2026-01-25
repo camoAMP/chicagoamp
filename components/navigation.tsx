@@ -8,6 +8,7 @@ import { withBasePath } from "@/lib/with-base-path"
 
 const servicesLinks = [
   { href: "/world-making", label: "World Making" },
+  { href: "/graphics-branding", label: "Graphics & Branding" },
   { href: "/websites", label: "All Our Website Builds" },
   { href: "/marketin", label: "Marketing" },
   { href: "/video-production-services", label: "Video Production Services" },
