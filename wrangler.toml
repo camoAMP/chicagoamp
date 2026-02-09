@@ -3,6 +3,29 @@ compatibility_date = "2025-02-05"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".next/export"
 
+# Environment variables for the production environment
 [vars]
 # Disable Next.js telemetry during Cloudflare builds
 NEXT_TELEMETRY_DISABLED = "1"
+# Enable source maps for better debugging
+NEXT_SOURCEMAP = "server"
+
+# Production environment bindings
+# [[env.production.bindings]]
+# kv_namespaces = [
+#   { binding = "MY_KV_NAMESPACE", id = "your-namespace-id" }
+# ]
+# 
+# [[env.production.bindings]]
+# d1_databases = [
+#   { binding = "DB", database_name = "my-database", database_id = "your-database-id" }
+# ]
+
+# Preview environment bindings (optional)
+# [env.preview.vars]
+# ENVIRONMENT = "preview"
+# 
+# [[env.preview.bindings]]
+# kv_namespaces = [
+#   { binding = "MY_KV_NAMESPACE", id = "your-preview-namespace-id" }
+# ]
