@@ -370,7 +370,7 @@ export default function IntakeFormPage() {
                           name="current_website"
                           type="url"
                           className="w-full px-6 py-5 text-lg bg-input border border-border rounded-[var(--radius)] transition-all focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/20"
-                          placeholder="https://www.yoursite.com"
+                          placeholder="https://example.com"
                         />
                       </div>
                     </div>

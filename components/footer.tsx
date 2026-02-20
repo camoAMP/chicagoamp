@@ -78,15 +78,6 @@ export function Footer() {
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a
-                href="https://share.google/2Xu2Ouv9KeCpSnCkC"
-                className="text-muted-foreground hover:text-primary transition-colors text-xs font-semibold tracking-wide"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GMB
-                <span className="sr-only">Google My Business</span>
-              </a>
             </div>
           </div>
 
