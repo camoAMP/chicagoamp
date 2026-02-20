@@ -29,7 +29,7 @@ export default function WebsitesShowcasePage() {
       <section className="pt-32 pb-12 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
           <Badge className="bg-primary text-primary-foreground px-4 py-1 uppercase tracking-[0.3em]">
-            Our Website Builds & Experiences
+            Website Builds & Experiences
           </Badge>
           <h1 className="text-4xl sm:text-5xl font-bold">All the experiences we&apos;ve crafted</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ export default function WebsitesShowcasePage() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button asChild size="sm">
-                    <Link href={`/${service.slug}`}>Open page</Link>
+                    <Link href={`/services/${service.slug}`}>Open page</Link>
                   </Button>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="/contact">Talk with us</Link>

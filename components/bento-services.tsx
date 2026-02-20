@@ -23,7 +23,7 @@ export function BentoServices() {
           {servicesData.map((service) => {
             const Icon = service.icon
             return (
-              <Link href={`/${service.slug}`} key={service.slug}>
+              <Link href={`/services/${service.slug}`} key={service.slug}>
                 <Card className="group relative h-full p-8 glass-effect border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-300" />

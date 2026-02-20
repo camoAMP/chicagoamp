@@ -7,16 +7,19 @@ import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/with-base-path"
 
 const servicesLinks = [
+  { href: "/services", label: "All Services" },
+  { href: "/services/commercial-video", label: "Commercial Video" },
+  { href: "/services/music-videos", label: "Music Videos" },
+  { href: "/services/event-coverage", label: "Event Coverage" },
+  { href: "/services/photography", label: "Photography" },
+  { href: "/services/wedding-films", label: "Wedding Films" },
+  { href: "/services/lighting-set-design", label: "Lighting & Set Design" },
+  { href: "/services/sound-design", label: "Sound Design" },
   { href: "/world-making", label: "World Making" },
   { href: "/graphics-branding", label: "Graphics & Branding" },
-  { href: "/websites", label: "All Our Website Builds" },
-  { href: "/marketin", label: "Marketing" },
+  { href: "/websites", label: "Website Builds" },
+  { href: "/marketing", label: "Marketing Suite" },
   { href: "/video-production-services", label: "Video Production Services" },
-  { href: "/music-videos", label: "Cinematic Music Videos" },
-  { href: "/event-coverage", label: "Event Coverage" },
-  { href: "/wedding-films", label: "Wedding Films" },
-  { href: "/lighting-set-design", label: "Lighting & Set Design" },
-  { href: "/sound-design", label: "Sound Design" },
 ]
 
 export function Navigation() {
@@ -59,6 +62,9 @@ export function Navigation() {
             <Link href="/" className="text-foreground hover:text-primary transition-colors">
               Home
             </Link>
+            <Link href="/services" className="text-foreground hover:text-primary transition-colors">
+              Services
+            </Link>
             <div className="relative" onMouseEnter={openServices} onMouseLeave={delayCloseServices}>
               <button
                 className="flex items-center gap-1 text-foreground hover:text-primary transition-colors"
@@ -68,7 +74,7 @@ export function Navigation() {
                 aria-haspopup="true"
                 aria-expanded={isServicesOpen}
               >
-                Services
+                Explore
                 <ChevronDown size={16} className={isServicesOpen ? "rotate-180 transition-transform" : "transition-transform"} />
               </button>
               {isServicesOpen && (
@@ -93,13 +99,18 @@ export function Navigation() {
             <Link href="/portfolio" className="text-foreground hover:text-primary transition-colors">
               Portfolio
             </Link>
+            <Link href="/marketing" className="text-foreground hover:text-primary transition-colors">
+              Marketing Suite
+            </Link>
             <Link href="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </Link>
             <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href="/contact">Get Started</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,11 +122,18 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
-            <Link href="/" className="block text-foreground hover:text-primary transition-colors">
+            <Link href="/" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
               Home
             </Link>
+            <Link
+              href="/services"
+              className="block text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Services
+            </Link>
             <div className="space-y-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">Services</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">Explore</p>
               <div className="space-y-2">
                 {servicesLinks.map((service) => (
                   <Link
@@ -129,16 +147,39 @@ export function Navigation() {
                 ))}
               </div>
             </div>
-            <Link href="/portfolio" className="block text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/portfolio"
+              className="block text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
               Portfolio
             </Link>
-            <Link href="/about" className="block text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/marketing"
+              className="block text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Marketing Suite
+            </Link>
+            <Link
+              href="/about"
+              className="block text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
               About
             </Link>
-            <Link href="/contact" className="block text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="block text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
               Contact
             </Link>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Get Started</Button>
+            <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
           </div>
         )}
       </div>

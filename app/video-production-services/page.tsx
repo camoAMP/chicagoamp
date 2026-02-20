@@ -60,20 +60,18 @@ const featuredVideosBySlug: Record<
   },
 }
 
-const featuredVideoWork = featuredServices
-  .map((service) => {
-    const video = featuredVideosBySlug[service.slug]
-    if (!video) return null
-    return {
+const featuredVideoWork = featuredServices.flatMap((service) => {
+  const video = featuredVideosBySlug[service.slug]
+  if (!video) return []
+
+  return [
+    {
       serviceTitle: service.title,
       serviceTagline: service.heroTagline,
       ...video,
-    }
-  })
-  .filter(
-    (item): item is { serviceTitle: string; serviceTagline?: string; title: string; description: string; vimeoUrl: string } =>
-      Boolean(item)
-  )
+    },
+  ]
+})
 
 export default function VideoProductionServicesPage() {
   return (
@@ -148,7 +146,7 @@ export default function VideoProductionServicesPage() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button asChild size="sm">
-                    <Link href={`/${service.slug}`}>View Service</Link>
+                    <Link href={`/services/${service.slug}`}>View Service</Link>
                   </Button>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="/contact">Start a project</Link>

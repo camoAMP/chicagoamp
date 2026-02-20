@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
 import { withBasePath } from "@/lib/with-base-path"
@@ -36,17 +37,17 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-                View Our Work
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 group">
+                <Link href="/portfolio">
+                  View Our Work
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10 group bg-transparent"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Watch Reel
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 group bg-transparent">
+                <Link href="/portfolio">
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Reel
+                </Link>
               </Button>
             </div>
 
