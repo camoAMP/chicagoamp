@@ -8,6 +8,9 @@ const baseUrl = "https://www.chicagoamp.com"
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
+    "/work",
+    "/labs",
+    "/culture",
     "/about",
     "/contact",
     "/portfolio",

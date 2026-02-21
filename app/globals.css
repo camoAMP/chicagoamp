@@ -127,4 +127,11 @@
       inset 0 0 0 1px rgba(0, 212, 255, 0.35),
       0 0 18px rgba(0, 212, 255, 0.2);
   }
+
+  .amp-cursor-on,
+  .amp-cursor-on a,
+  .amp-cursor-on button,
+  .amp-cursor-on [role="button"] {
+    cursor: none !important;
+  }
 }

@@ -20,18 +20,28 @@ const zillaSlab = Zilla_Slab({
 })
 
 export const metadata: Metadata = {
-  title: "Chicago AMP | Explore Our Creative World",
+  metadataBase: new URL("https://www.chicagoamp.com"),
+  title: {
+    default: "Chicago AMP | Digital Theatre for Serious Results",
+    template: "%s | Chicago AMP",
+  },
   description:
-    "Discover Chicago AMP's innovative storytelling through film, art, and events. Experience our world-building expertise in lighting, sound, and design.",
+    "Chicago AMP builds cinematic, performance-driven narrative systems for brands that need market-dominating creative and measurable growth.",
+  keywords: [
+    "Chicago Video Marketing Agency",
+    "High-End Brand Storytelling",
+    "Performance-Driven Creative Studio",
+    "Cinematic Campaign Strategy",
+  ],
   generator: "v0.app",
   icons: {
     icon: "/favicon.ico",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Chicago AMP | Explore Our Creative World",
+    title: "Chicago AMP | Digital Theatre for Serious Results",
     description:
-      "Discover Chicago AMP's innovative storytelling through film, art, and events. Experience our world-building expertise in lighting, sound, and design.",
+      "Chicago AMP builds cinematic, performance-driven narrative systems for brands that need market-dominating creative and measurable growth.",
     url: "https://www.chicagoamp.com",
     siteName: "Chicago AMP",
     images: [
@@ -47,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chicago AMP | Explore Our Creative World",
+    title: "Chicago AMP | Digital Theatre for Serious Results",
     description:
-      "Discover Chicago AMP's innovative storytelling through film, art, and events. Experience our world-building expertise in lighting, sound, and design.",
+      "Chicago AMP builds cinematic, performance-driven narrative systems for brands that need market-dominating creative and measurable growth.",
     images: ["/chicago-amp-logo.png"],
   },
 }
