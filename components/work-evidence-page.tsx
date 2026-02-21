@@ -324,7 +324,7 @@ function CaseStudyModal({ caseStudy, onClose }: CaseStudyModalProps) {
 
           <Card className="border-border/70 bg-background/50 p-5 sm:p-6">
             <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Pinnacle Culture Principle</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">AMP Culture Principle</p>
               <h3 className="text-2xl font-bold">{caseStudy.pinnacleHeading}</h3>
               <p className="leading-relaxed text-muted-foreground">{caseStudy.pinnacleNarrative}</p>
             </div>
@@ -416,7 +416,7 @@ export function WorkEvidencePage() {
             <span className="block text-primary glow-cyan">It is a Digital Theatre.</span>
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Explore scroll-triggered case narratives where atmosphere engineering, pinnacle culture principles, and
+            Explore scroll-triggered case narratives where atmosphere engineering, AMP culture principles, and
             measurable outcomes are surfaced in the same frame.
           </p>
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90" data-cursor="explore">
