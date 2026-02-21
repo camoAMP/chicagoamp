@@ -20,7 +20,7 @@ export function PortfolioHero() {
           </h1>
 
           <p className="text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
-            Explore our portfolio of transformative projects that have helped brands grow and thrive.
+            Browse videos, websites, photography, branding, and campaign work delivered for growth-focused teams.
           </p>
         </div>
       </div>

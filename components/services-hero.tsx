@@ -20,7 +20,7 @@ export function ServicesHero() {
           </h1>
 
           <p className="text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
-            From strategy to execution, we deliver comprehensive solutions tailored to your business goals.
+            From video production and photography to technical execution, we deliver services tailored to business goals.
           </p>
         </div>
       </div>

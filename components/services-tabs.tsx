@@ -3,9 +3,27 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Video, Camera, Lightbulb, CheckCircle } from "lucide-react"
+import { Video, Camera, Lightbulb, CheckCircle, type LucideIcon } from "lucide-react"
+import { withBasePath } from "@/lib/with-base-path"
 
-const servicesData = {
+type ServiceItem = {
+  name: string
+  details: string
+  features: string[]
+  pricing: string
+  previewImage: string
+}
+
+type ServiceGroup = {
+  icon: LucideIcon
+  title: string
+  description: string
+  services: ServiceItem[]
+}
+
+type ServiceTabKey = "production" | "photography" | "technical"
+
+const servicesData: Record<ServiceTabKey, ServiceGroup> = {
   production: {
     icon: Video,
     title: "Video Production",
@@ -21,6 +39,7 @@ const servicesData = {
           "Motion graphics and animation",
         ],
         pricing: "Custom quote",
+        previewImage: "/portfolio-food-film.jpg",
       },
       {
         name: "Music Videos",
@@ -32,6 +51,7 @@ const servicesData = {
           "Distribution-ready deliverables",
         ],
         pricing: "Custom quote",
+        previewImage: "/portfolio-festival-event.jpg",
       },
       {
         name: "Corporate & Event Videos",
@@ -43,6 +63,7 @@ const servicesData = {
           "Same-day highlight reels available",
         ],
         pricing: "Starting at $2,500/day",
+        previewImage: "/portfolio-tech-conference.jpg",
       },
       {
         name: "Documentaries & Brand Films",
@@ -54,6 +75,7 @@ const servicesData = {
           "Festival-ready deliverables",
         ],
         pricing: "Custom quote",
+        previewImage: "/portfolio-marketing-campaign.jpg",
       },
     ],
   },
@@ -72,6 +94,7 @@ const servicesData = {
           "Fast turnaround times",
         ],
         pricing: "Starting at $1,500/day",
+        previewImage: "/L1000639.jpg",
       },
       {
         name: "Wedding Photography",
@@ -83,6 +106,7 @@ const servicesData = {
           "Digital and print deliverables",
         ],
         pricing: "Custom packages available",
+        previewImage: "/weddings.png",
       },
       {
         name: "Portrait & Headshots",
@@ -94,6 +118,7 @@ const servicesData = {
           "Same-day turnaround available",
         ],
         pricing: "Starting at $500/session",
+        previewImage: "/505874484_23869085939397396_5993159258197604856_n.jpg",
       },
       {
         name: "Product & Commercial",
@@ -105,6 +130,7 @@ const servicesData = {
           "360-degree product photography",
         ],
         pricing: "Starting at $800/project",
+        previewImage: "/products.jpg",
       },
     ],
   },
@@ -123,6 +149,7 @@ const servicesData = {
           "Creative atmosphere engineering",
         ],
         pricing: "Included in production",
+        previewImage: "/set_n.jpg",
       },
       {
         name: "Sound Design & Recording",
@@ -134,6 +161,7 @@ const servicesData = {
           "Audio restoration and enhancement",
         ],
         pricing: "Included in production",
+        previewImage: "/sound.jpg",
       },
       {
         name: "Set Design & Production",
@@ -145,6 +173,7 @@ const servicesData = {
           "Full production management",
         ],
         pricing: "Custom quote",
+        previewImage: "/OneDrive_1_17-12-2025/Camera Setup.jpg",
       },
       {
         name: "Live Streaming",
@@ -156,13 +185,14 @@ const servicesData = {
           "Recording and post-event delivery",
         ],
         pricing: "Starting at $3,000/event",
+        previewImage: "/movie.jpg",
       },
     ],
   },
 }
 
 export function ServicesTabs() {
-  const [activeTab, setActiveTab] = useState<"production" | "photography" | "technical">("production")
+  const [activeTab, setActiveTab] = useState<ServiceTabKey>("production")
 
   const currentService = servicesData[activeTab]
   const Icon = currentService.icon
@@ -170,14 +200,13 @@ export function ServicesTabs() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Tab Navigation */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {Object.entries(servicesData).map(([key, data]) => {
             const TabIcon = data.icon
             return (
               <Button
                 key={key}
-                onClick={() => setActiveTab(key as any)}
+                onClick={() => setActiveTab(key as ServiceTabKey)}
                 variant={activeTab === key ? "default" : "outline"}
                 size="lg"
                 className={
@@ -193,9 +222,7 @@ export function ServicesTabs() {
           })}
         </div>
 
-        {/* Tab Content */}
         <div className="max-w-5xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-12 space-y-4">
             <div className="inline-flex items-center justify-center w-20 h-20 glass-effect rounded-2xl">
               <Icon className="h-10 w-10 text-primary" />
@@ -204,34 +231,27 @@ export function ServicesTabs() {
             <p className="text-xl text-muted-foreground text-pretty">{currentService.description}</p>
           </div>
 
-          {/* Services Video Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {currentService.services.map((service, index) => (
               <Card
                 key={index}
                 className="glass-effect border-border overflow-hidden group hover:border-primary/50 transition-all"
               >
-                {/* Video Block */}
                 <div className="relative aspect-video bg-muted overflow-hidden">
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                    <source
-                      src={`/placeholder.svg?height=400&width=600&query=${encodeURIComponent(service.name + " example video")}`}
-                      type="video/mp4"
-                    />
-                  </video>
-                  {/* Overlay Gradient */}
+                  <img
+                    src={withBasePath(service.previewImage)}
+                    alt={`${service.name} preview`}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                  {/* Service Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-xl font-bold text-foreground mb-1">{service.name}</h3>
                     <p className="text-sm text-muted-foreground">{service.details}</p>
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 space-y-4">
-                  {/* Features List */}
                   <div className="space-y-2">
                     {service.features.slice(0, 3).map((feature, fIndex) => (
                       <div key={fIndex} className="flex items-start gap-2">
@@ -241,7 +261,6 @@ export function ServicesTabs() {
                     ))}
                   </div>
 
-                  {/* Pricing & CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div>
                       <div className="text-xs text-muted-foreground mb-1">Starting at</div>
@@ -256,7 +275,6 @@ export function ServicesTabs() {
             ))}
           </div>
 
-          {/* Bottom CTA */}
           <Card className="mt-12 p-8 glass-effect border-border text-center">
             <h3 className="text-2xl font-bold mb-3">Need a Custom Solution?</h3>
             <p className="text-muted-foreground mb-6">

@@ -1,6 +1,6 @@
 [build]
-command = "next build"
-dir = ".vercel/output/static"
+command = "pnpm run build"
+dir = ".next/export"
 
 [deploy]
-command = "wrangler pages deploy .vercel/output/static"
+command = "wrangler pages deploy .next/export --project-name=chicagoamp"

@@ -150,6 +150,68 @@ export const servicesData: ServiceDetail[] = [
     ],
   },
   {
+    slug: "photography",
+    icon: Camera,
+    title: "Photography",
+    description: "Professional photography for campaigns, websites, products, and live events.",
+    longDescription:
+      "Great photography drives trust, conversion, and brand recognition. We create high-impact image libraries you can use across websites, paid campaigns, social channels, and internal decks.",
+    metrics: "300+ photo shoots",
+    color: "text-primary",
+    image: "/photo.jpg",
+    heroTagline: "Professional photography for campaigns, websites, products, and live events.",
+    introParagraph:
+      "From staged brand sessions to documentary-style event coverage, our photography team captures images that are both visually strong and strategically useful. We deliver edited, platform-ready assets that keep your brand consistent across every touchpoint.",
+    whatYouGet: [
+      "Creative direction and shot list planning",
+      "On-location or studio photography sessions",
+      "Professional color correction and retouching",
+      "Web, social, and print-ready exports",
+      "Organized asset delivery for quick team handoff",
+    ],
+    perfectFor:
+      "Brand campaigns, product launches, headshots, website refreshes, social media content, and event documentation.",
+    statLine: "300+ photo shoots completed • Fast, campaign-ready delivery",
+    ctaLine:
+      "Need a reliable photography partner? Share your goals and we will plan a shoot that matches your timeline, channels, and brand style.",
+    stats: [
+      { label: "Shoots Completed", value: "300+" },
+      { label: "Avg Turnaround", value: "5-7 days" },
+    ],
+    highlights: [
+      { label: "Brand Consistency", description: "Image sets built for cross-channel use and long-term campaigns." },
+      { label: "Location Flexibility", description: "Studio and on-location production anywhere your team needs us." },
+      { label: "Post Production", description: "Professional retouching and exports tailored to each platform." },
+    ],
+    testimonials: [
+      {
+        quote: "The photos immediately elevated our website and paid ad performance.",
+        author: "Nadia Lopez",
+        role: "Brand Manager",
+      },
+    ],
+    onboardingSteps: [
+      {
+        title: "Planning Session",
+        description: "We align on style references, shot priorities, and where assets will be used.",
+      },
+      {
+        title: "Shoot Day",
+        description: "Our team captures planned and candid moments with lighting and direction built in.",
+      },
+      {
+        title: "Edit & Delivery",
+        description: "We deliver a polished gallery with exports for web, social, and print workflows.",
+      },
+    ],
+    requirements: [
+      "Brand guidelines or mood references",
+      "Shot list and usage goals",
+      "Location access details",
+      "Approval contact for final selections",
+    ],
+  },
+  {
     slug: "event-coverage",
     icon: Camera,
     title: "Event Coverage",

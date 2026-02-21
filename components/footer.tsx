@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 
 export function Footer() {
   return (
@@ -63,6 +63,8 @@ export function Footer() {
               <a
                 href="https://www.instagram.com/chicagoamp/"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
@@ -70,17 +72,11 @@ export function Footer() {
               <a
                 href="https://www.facebook.com/chicagoamp"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Youtube size={20} />
-                <span className="sr-only">YouTube</span>
               </a>
             </div>
           </div>

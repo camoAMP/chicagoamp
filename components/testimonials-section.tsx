@@ -11,7 +11,7 @@ const testimonials = [
     content:
       "Chicago AMP transformed our digital presence completely. Their creative approach and technical expertise delivered results beyond our expectations.",
     rating: 5,
-    image: "/professional-woman-ceo.png",
+    image: "/reviewer-sarah.svg",
   },
   {
     name: "Michael Chen",
@@ -19,7 +19,7 @@ const testimonials = [
     content:
       "Working with AMP was a game-changer. They doubled our lead generation in just 3 months with their innovative marketing strategies.",
     rating: 5,
-    image: "/professional-man-marketing.png",
+    image: "/reviewer-michael.svg",
   },
   {
     name: "Emily Rodriguez",
@@ -27,7 +27,7 @@ const testimonials = [
     content:
       "The video production quality is unmatched. They captured our brand story perfectly and helped us connect with our audience on a deeper level.",
     rating: 5,
-    image: "/professional-woman-founder.png",
+    image: "/reviewer-emily.svg",
   },
 ]
 
